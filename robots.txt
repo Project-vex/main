@@ -1,0 +1,16 @@
+User-agent: Discordbot
+Allow: /  # Allow Discord's bot to access and embed content from your website
+
+User-agent: Android
+Allow: /  # Allow Android messaging apps to access and embed content from your website
+
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /game-stats/
+Allow: /Games
+Allow: /Games/
+
+Sitemap:https://gmsw.rf.gd/sitemap.php
+
+

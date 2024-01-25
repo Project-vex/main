@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:s="http://www.sitemaps.org/schemas/sitemap/0.9"
+    exclude-result-prefixes="s">
+    
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>XML Sitemap</title>
+                <style>
+                    /* CSS styles for HTML elements */
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        background-color: #f5f5f5;
+                        color: #333;
+                    }
+                    h1 {
+                        color: #007bff;
+                        text-align: center;
+                    }
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                    }
+                    li {
+                        margin-bottom: 10px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        background-color: #fff;
+                    }
+                    li strong {
+                        font-weight: bold;
+                        color: #444;
+                    }
+                    span {
+                        color: #777;
+                    }
+                    /* Additional styles */
+                </style>
+            </head>
+            <body>
+                <h1>XML Sitemap</h1>
+                <ul>
+                    <xsl:for-each select="//s:url">
+                        <li>
+                            <strong>Location:</strong> <xsl:value-of select="s:loc"/><br/>
+                            <span>Last Modified:</span> <xsl:value-of select="s:lastmod"/><br/>
+                            <span>Priority:</span> <xsl:value-of select="s:priority"/><br/>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with Google</title>
+    <!-- Include the Google Sign-In library -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="703191353700-q2al70fhccu20omuqq4psvnn54qfp1lv.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <h1>Login with Google</h1>
+    
+    <!-- Google Sign-In button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    
+    <script>
+        // This function gets called when a user successfully signs in
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // User's ID
+            console.log('Name: ' + profile.getName()); // User's name
+            console.log('Image URL: ' + profile.getImageUrl()); // User's profile picture URL
+            console.log('Email: ' + profile.getEmail()); // User's email address
+        }
+    </script>
+</body>
+</html>
